@@ -16,6 +16,6 @@ public class Interactable : MonoBehaviour
 
     void TriggerInteraction()
     {
-      
+        Debug.Log("Interacted");
     }
 }
