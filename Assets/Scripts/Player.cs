@@ -18,10 +18,14 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        //we might have to do something with touch phase
+
+
+        if(Input.touchCount > 0)//if (Input.GetMouseButtonDown(0))
         {
+            Touch touch = Input.GetTouch(0);
             RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray ray = Camera.main.ScreenPointToRay(touch.position);//(Input.mousePosition);
             if (Physics.Raycast(ray, out hit, 100.0f))
             {
                 //Check if the object clicked on is interactable by putting it in a variable and see if its null
