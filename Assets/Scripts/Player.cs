@@ -37,7 +37,7 @@ public class Player : MonoBehaviour
 
                     if(canvas != null)
                     {
-                        StartCoroutine(showDialogue(canvas.GetComponent<InteractionCanvas>()));
+                        showDialogue(canvas.GetComponent<InteractionCanvas>());
                     }
                     
                 }
@@ -55,11 +55,10 @@ public class Player : MonoBehaviour
         objTr.localScale /= 1.2f;
     }
 
-    //temp show canvas coroutine
-    IEnumerator showDialogue(InteractionCanvas intCanvas) //right now it just shows canvas for 3 seconds and destroys it
+    //function to show dialogue box
+    void showDialogue(InteractionCanvas intCanvas)
     {
         intCanvas.ShowBox();
-        yield return new WaitForSeconds(3);
-        intCanvas.DestroyBox();
+        //intCanvas.DestroyBox();
     }
 }
