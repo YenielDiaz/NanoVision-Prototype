@@ -526,7 +526,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8908209005bdd9346b352f316046c60b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  filename: example1
+  owner: {fileID: 9211797561595318250, guid: 554d629ece9d7ce48ad29db5daab1860, type: 3}
   txtSpeed: 0.1
   sentences: []
 --- !u!1 &8262446483140016576

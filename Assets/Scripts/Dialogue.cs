@@ -12,7 +12,10 @@ public class Dialogue : MonoBehaviour
     //cached object
     InteractionCanvas canvas;
 
-    [SerializeField] string filename = "example1";
+    //Dialoguebox fields
+        //holds object that will tell the dialogue what to say
+    [SerializeField] Interactable owner;
+    //[SerializeField] string filename = "example1";
     [SerializeField] float txtSpeed = 0.1f;
     TextAsset txt;
 
@@ -28,8 +31,9 @@ public class Dialogue : MonoBehaviour
         canvas = FindObjectOfType<InteractionCanvas>();
         //get this object's text mesh pro component
         tmpro = GetComponent<TextMeshProUGUI>();
+
         //load text file from the resources folder. Has to be from the resources folder
-        txt = Resources.Load("TextFiles/" + filename) as TextAsset;
+        txt = Resources.Load("TextFiles/" + owner.GetFileName()) as TextAsset;
 
         //get all sentences by splitting the text wherever a period is found
         //this will end up with one empty sentences at the end will have to deal with that
@@ -39,8 +43,6 @@ public class Dialogue : MonoBehaviour
         currIndex = 1;
         //on creation show first sentence
         StartCoroutine(ShowText(sentences[0]));
-        
-
     }
 
     //Coroutine to show next char sequentially
@@ -75,7 +77,5 @@ public class Dialogue : MonoBehaviour
             StartCoroutine(ShowText(sentences[currIndex]));
             currIndex++;
         }
-        
-        
     }
 }

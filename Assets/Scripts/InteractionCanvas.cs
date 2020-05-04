@@ -5,20 +5,15 @@ using UnityEngine;
 public class InteractionCanvas : MonoBehaviour
 {
 
+    //element that it will instantiate
     [SerializeField] Object uiElemPrefab;
+
+    //x and y position where we want the instantiated element to appear
     [SerializeField] float elemXPos = 15.4f;
     [SerializeField] float elemtYpos = 78.2f;
+
+    //holds the current instance of the dialogue box
     private Object currentDialogueBox;
-
-    void Start()
-    {
-        
-    }
-
-    void Update()
-    {
-        
-    }
 
     //Function that will show the dialogue box when called
     public void ShowBox()
