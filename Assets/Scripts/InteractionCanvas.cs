@@ -33,4 +33,5 @@ public class InteractionCanvas : MonoBehaviour
         Destroy(currentDialogueBox);
         currentDialogueBox = null;
     }
+
 }

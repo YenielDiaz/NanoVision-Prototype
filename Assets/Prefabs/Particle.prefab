@@ -106,4 +106,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e52502b97d553e247a8728cf1ff45e07, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  canvas: {fileID: 0}
   radius: 1
+  filename: example1
+  buttons:
+  - {fileID: 4841893272692059399, guid: 388cc26dc0d0d494a8966c8f782c9323, type: 3}

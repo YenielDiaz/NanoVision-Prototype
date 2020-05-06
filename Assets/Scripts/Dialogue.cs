@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
 
 public class Dialogue : MonoBehaviour
@@ -18,6 +17,8 @@ public class Dialogue : MonoBehaviour
     //[SerializeField] string filename = "example1";
     [SerializeField] float txtSpeed = 0.1f;
     TextAsset txt;
+    //arraylist that holds all dialogue buttons that are active
+    ArrayList buttons = new ArrayList();
 
     //array to store sentences
     public string[] sentences;
@@ -50,14 +51,22 @@ public class Dialogue : MonoBehaviour
     {
         //first it is empty
         tmpro.text = "";
-        //for each loop
-        foreach(char c in text.ToCharArray())
+
+        if(text.Length == 0)
         {
-            //show next char
-            tmpro.text += c;
-            //wait txtSpeed amount of seconds before showing next char
-            yield return new WaitForSeconds(txtSpeed);
+            ShowAnswerOptions();
         }
+        else
+        {
+            foreach (char c in text.ToCharArray())
+            {
+                //show next char
+                tmpro.text += c;
+                //wait txtSpeed amount of seconds before showing next char
+                yield return new WaitForSeconds(txtSpeed);
+            }
+        }
+        
     }
 
     //method the button will call whenever it is pressed
@@ -67,7 +76,7 @@ public class Dialogue : MonoBehaviour
         int size = sentences.Length;
 
         //Destroy box if the last sentence was shown
-        if (currIndex >= size-1) //we use size - 1 because when we store all the sentences with split there is always one empty sentence at the end
+        if (currIndex >= size) //last sentence will be empty which will be where we show the options
         {
             canvas.DestroyBox();
         }
@@ -78,4 +87,26 @@ public class Dialogue : MonoBehaviour
             currIndex++;
         }
     }
+
+    public void ShowAnswerOptions()
+    {
+
+        foreach(GameObject go in owner.getButtons())
+        {
+            //instantiates the button and adds it to the arrayList;
+           buttons.Add(Instantiate(go, transform));
+        }
+    }
+
+    public void DestroyAllDialogueButtons()
+    {
+        //destroy every single dialogue button in the arrayList
+        foreach(GameObject go in buttons)
+        {
+            Destroy(go);
+        }
+        //reset arraylist of buttons
+        buttons = new ArrayList();
+    }
+
 }

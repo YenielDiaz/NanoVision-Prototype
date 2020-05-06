@@ -10,6 +10,8 @@ public class Interactable : MonoBehaviour
     [SerializeField] float radius = 2f;
     [SerializeField] string filename = "example1";
 
+    //buttonPrefabs
+    [SerializeField] GameObject[] buttons;
 
     void Start()
     {
@@ -45,5 +47,10 @@ public class Interactable : MonoBehaviour
     void showDialogue(InteractionCanvas intCanvas)
     {
         intCanvas.ShowBox();
+    }
+
+    public GameObject[] getButtons()
+    {
+        return buttons;
     }
 }
