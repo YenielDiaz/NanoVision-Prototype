@@ -18,15 +18,6 @@ public class GameTimer : MonoBehaviour
     }
     void Update()
     {
-        //for testing purposes I just say I start the game when I press the K key
-        if (Input.GetKeyDown(KeyCode.K) && !gameStarted)
-        {
-            gameStarted = true;
-            //we store the time at which we started the game
-            timeSinceGameStart = Time.timeSinceLevelLoad;
-        }
-
-
         //when gameStarted is true then we start the timer
         if (gameStarted)
         {
@@ -44,6 +35,18 @@ public class GameTimer : MonoBehaviour
         {
             //FindObjectOfType<LevelController>().LevelTimerFinished();
             timerFinished = true;
+        }
+    }
+
+
+    //method for a button. When the button is pressed the game will start
+    public void StartGame()
+    {
+        if (!gameStarted)
+        {
+            gameStarted = true;
+            //we store the time at which we started the game
+            timeSinceGameStart = Time.timeSinceLevelLoad;
         }
     }
 }
