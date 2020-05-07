@@ -356,7 +356,7 @@ MonoBehaviour:
   beadPrefab: {fileID: 6816778704457998200, guid: d73ed9565849b85459dadc34f53ea2a7,
     type: 3}
   beadCountToCreate: 10
-  minUVBeadCount: 0
+  minUVBeadCount: 3
   beads: []
   spacing: 2.5
   creationPos: {x: -12, y: 0, z: 25}
