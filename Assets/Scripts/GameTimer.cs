@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class GameTimer : MonoBehaviour
 {
+
     [Tooltip("Our level timer in SECONDS")]
     [SerializeField] float levelTime = 10;
     [SerializeField] float timeSinceGameStart;
@@ -30,11 +31,12 @@ public class GameTimer : MonoBehaviour
             slider.value = (Time.timeSinceLevelLoad - timeSinceGameStart) / levelTime;
         }
 
-        timerFinished = (Time.timeSinceLevelLoad >= levelTime);
+        //see if the timer is done
+        timerFinished = ((Time.timeSinceLevelLoad - timeSinceGameStart) >= levelTime);
         if (timerFinished)
         {
             //FindObjectOfType<LevelController>().LevelTimerFinished();
-            timerFinished = true;
+            
         }
     }
 
