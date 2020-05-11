@@ -24,6 +24,7 @@ public class BeadFactory : MonoBehaviour
     System.Random rand = new System.Random(); //we specify System.Random because UnityEngine.Random does not generate random ints
     //starting number of beads set to UV
     int currUVBeads;
+    //Single Tap Enabled
 
     void Start()
     {
@@ -70,6 +71,20 @@ public class BeadFactory : MonoBehaviour
 
     void Update()
     {
-        
+        for(int i = 0; i < Input.touchCount; i++)
+        {
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
+                {
+                    for(int j = 0; j < beadCountToCreate; j++)
+                    {
+                    if (!beads[j].GetComponent<Bead>().GetIsUV())
+                        {
+                        beads[j].GetComponent<Bead>().SetIsUV(true);
+                        }
+                    }
+                }
+            
+
+        }
     }
 }
