@@ -11,4 +11,10 @@ public class SceneLoader : MonoBehaviour
         //each button that calls on this method will specify its own scene to load
         SceneManager.LoadScene(sceneName);
     }
+
+    public void LoadHub()
+    {
+        //loads scene at build index- 0. Which at the moment is the hub scene
+        SceneManager.LoadScene(0);
+    }
 }

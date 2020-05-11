@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<QCARConfig xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="qcar_config.xsd">
+  <Tracking>
+    <ImageTarget name="NanoGames5" size="0.500000 0.843088" />
+    <ImageTarget name="NanoGames4" size="0.500000 0.760209" />
+    <ImageTarget name="NanoGames3" size="0.500000 0.660648" />
+    <ImageTarget name="NannoGames2" size="0.500000 0.741255" />
+    <ImageTarget name="NanoGames1" size="0.500000 0.759645" />
+    <ImageTarget name="Target5" size="0.500000 0.426612" />
+    <ImageTarget name="Target4" size="0.500000 0.513453" />
+    <ImageTarget name="Target3" size="0.500000 0.518569" />
+    <ImageTarget name="Target1" size="0.500000 0.736031" />
+    <ImageTarget name="Target2" size="0.500000 0.931689" />
+  </Tracking>
+</QCARConfig>

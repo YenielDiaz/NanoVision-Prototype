@@ -38,7 +38,7 @@ public class Dialogue : MonoBehaviour
 
         //get all sentences by splitting the text wherever a period is found
         //this will end up with one empty sentences at the end will have to deal with that
-        sentences = txt.text.Split('.'); //WE WILL HAVE TO BE CAREFUL WITH ABREVIATIONS OR FIND A WAY TO DEAL WITH THEM
+        sentences = txt.text.Split('\n'); //WE WILL HAVE TO BE CAREFUL WITH ABREVIATIONS OR FIND A WAY TO DEAL WITH THEM
 
         //start index at second position because we will show the first one on instantiation
         currIndex = 1;

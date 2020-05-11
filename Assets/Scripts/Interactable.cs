@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Interactable : MonoBehaviour
 {
-    [SerializeField] Canvas canvas;
+    [SerializeField] InteractionCanvas canvas;
 
     //radius of the gizmo that will be drawn
     [SerializeField] float radius = 2f;
@@ -15,7 +15,8 @@ public class Interactable : MonoBehaviour
 
     void Start()
     {
-        canvas = FindObjectOfType<Canvas>();
+        canvas = FindObjectOfType<InteractionCanvas>();
+        
     }
 
     void OnDrawGizmos()
@@ -30,10 +31,10 @@ public class Interactable : MonoBehaviour
     public void TriggerInteraction()
     {
         Debug.Log("Interacted");
-        //if there is a canvas on screen show the dialogue box
+        //if there is an interaction canvas on screen show the dialogue box
         if (canvas != null)
         {
-            showDialogue(canvas.GetComponent<InteractionCanvas>());
+            showDialogue(canvas);
         }
     }
 

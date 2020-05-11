@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/ParticleSceneAR.unity
-    guid: 43db26c6e68d5984485956c1d93a7bcd
+    path: Assets/Scenes/UI prototype.unity
+    guid: ce7233031cc76034f9f07ddef2c28eb0
   - enabled: 1
     path: Assets/Scenes/MinigameScene.unity
     guid: 663ab409a75328e48a631dac4dcd584f

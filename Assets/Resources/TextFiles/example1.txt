@@ -1,3 +1,7 @@
-This is sentence 1. This
-Is sentence
-2. This is sentence 3.
+I am the particle that talks about UV minigame
+Normal beads when placed under a UV light source
+will not show any particular effect.
+UV beads, however, will change their pigment
+This is because of their composition
+at the nanoscale. Now...
+Do you want to play the UV Minigame?

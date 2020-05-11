@@ -35,8 +35,9 @@ public class GameTimer : MonoBehaviour
         timerFinished = ((Time.timeSinceLevelLoad - timeSinceGameStart) >= levelTime);
         if (timerFinished)
         {
-            //FindObjectOfType<LevelController>().LevelTimerFinished();
-            
+            //Final Product would calculate results and show them, THEN load back to the hub world
+            //However At the moment it just quickly loads back to hub
+            FindObjectOfType<SceneLoader>().LoadHub();
         }
     }
 
