@@ -1,0 +1,4 @@
+This game's purpose is to use nanotechnology concepts 
+to increase student motivation towards STEAM careers.
+It is made as a result of a research project from the 
+University of Puerto Rico Mayaguez.
