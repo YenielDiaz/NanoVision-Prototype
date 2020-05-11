@@ -24,6 +24,7 @@ public class BeadFactory : MonoBehaviour
     System.Random rand = new System.Random(); //we specify System.Random because UnityEngine.Random does not generate random ints
     //starting number of beads set to UV
     int currUVBeads;
+    //Single Tap Enabled
 
     void Start()
     {
@@ -48,28 +49,41 @@ public class BeadFactory : MonoBehaviour
             creationPos.x = rand.Next(-HorizontalLimit, HorizontalLimit+1);
             creationPos.y = rand.Next(-VerticalLimit, VerticalLimit + 1);
 
-            /*
-             * 
-             * 
-             * //until we get the min amound of UV beads, we keep turning a random one into UV
-        while (currUVBeads < minUVBeadCount)
-        {
-            if(!beads[rand.Next(0, beadCountToCreate)].GetComponent<Bead>().GetIsUV())
+                /*
+                 * 
+                 * 
+                 * //until we get the min amound of UV beads, we keep turning a random one into UV
+            while (currUVBeads < minUVBeadCount)
             {
-                beads[rand.Next(0, beadCountToCreate)].GetComponent<Bead>().SetIsUV(true);
-                currUVBeads++;
-            }
+                if(!beads[rand.Next(0, beadCountToCreate)].GetComponent<Bead>().GetIsUV())
+                {
+                    beads[rand.Next(0, beadCountToCreate)].GetComponent<Bead>().SetIsUV(true);
+                    currUVBeads++;
+                }
             
-        }
-             * An Alternative to the above method would be to:
-             *  instantiate the beads outside of the screen with assigned UV vals such that we have a desired amount of UV
-             *  then move their position to a random part of the screen
+            }
              * */
         }
     }
 
     void Update()
     {
-        
+        //For testing purposes
+        //Here we affect the beads based on their type on command
+        for(int i = 0; i < Input.touchCount; i++)
+        {
+            if (Input.GetTouch(i).phase == TouchPhase.Began)
+                {
+                    for(int j = 0; j < beadCountToCreate; j++)
+                    {
+                    if (!beads[j].GetComponent<Bead>().GetIsUV())
+                        {
+                        beads[j].GetComponent<Bead>().SetIsUV(true);
+                        }
+                    }
+                }
+            
+
+        }
     }
 }
